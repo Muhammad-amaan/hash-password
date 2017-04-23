@@ -16,8 +16,7 @@ class Hash{
             'cost' => 11,
             'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
         ];
-        password_hash($password, PASSWORD_BCRYPT, $options);
-        return true;
+        return password_hash($password, PASSWORD_BCRYPT, $options);
     }
 
     public function check($text, $hash)
